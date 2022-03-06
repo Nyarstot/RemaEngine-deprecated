@@ -6,6 +6,10 @@ extern remaEngine::Engine* remaEngine::CreateApplication();
 
 int main(int argc, char** argv)
 {
+	remaEngine::Log::Init();
+	REMA_CORE_WARNING("Engine has been started");
+	REMA_INFO("Application has been startred");
+
 	auto app = remaEngine::CreateApplication();
 	app->Run();
 	delete app;

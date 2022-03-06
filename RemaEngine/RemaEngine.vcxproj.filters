@@ -27,9 +27,15 @@
     <ClInclude Include="sources\Rema\Engine\Launch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Rema\Engine\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Rema\Engine\Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Rema\Engine\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
