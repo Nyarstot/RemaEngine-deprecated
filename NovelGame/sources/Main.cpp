@@ -5,7 +5,7 @@ class NovelGame : public remaEngine::Engine
 public:
 	NovelGame()
 	{
-
+		
 	}
 
 	~NovelGame()

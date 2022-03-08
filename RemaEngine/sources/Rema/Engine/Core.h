@@ -8,7 +8,7 @@
 		#define REMA_API __declspec(dllimport)
 	#endif
 #else
-	#error Rema only supports windows
+	#error Rema only supports windows now
 #endif
 
 #endif // !REMA_CORE_H

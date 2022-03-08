@@ -1,6 +1,7 @@
 # Directories 
 .vs/
 bin/
+int/
 RemaEngine/dependencies/
 
 # Files
