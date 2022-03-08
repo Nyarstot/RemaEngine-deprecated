@@ -15,7 +15,7 @@ int main(int argc, char** argv)
 	delete app;
 }
 
-#endif // REMA_PLATFORM_WINDOWS
+#endif // !REMA_PLATFORM_WINDOWS
 
 
 #endif // !REMA_LAUNCH_H

@@ -11,4 +11,7 @@
 	#error Rema only supports windows now
 #endif
 
+#define BIT(x) (1 << x)
+#define ruint unsigned int
+
 #endif // !REMA_CORE_H

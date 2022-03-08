@@ -4,6 +4,7 @@
 #include "Core.h"
 
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace remaEngine
 {
@@ -35,5 +36,5 @@ namespace remaEngine
 #define REMA_ERROR(...)		::remaEngine::Log::GetClientLogger()->error(__VA_ARGS__)
 #define REMA_FATAL(...)		::remaEngine::Log::GetClientLogger()->fatal(__VA_ARGS__)
 
-#endif // REMA_LOG_H
+#endif // !REMA_LOG_H
 

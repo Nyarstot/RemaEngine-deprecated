@@ -22,6 +22,10 @@
     <ClInclude Include="sources\Rema\Engine\Log.h">
       <Filter>Rema\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Rema\Input\Action.h" />
+    <ClInclude Include="sources\Rema\Input\KeyboardAction.h" />
+    <ClInclude Include="sources\Rema\Input\MouseAction.h" />
+    <ClInclude Include="sources\Rema\Input\WindowAction.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Rema\Engine\Engine.cpp">
