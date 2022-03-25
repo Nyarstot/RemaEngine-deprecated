@@ -41,6 +41,12 @@ project "RemaEngine"
             "REMA_BUILD_DLL"
         }
 
+        postbuildcommands
+        {
+            ("{MKDIR} %{wks.location}bin/" .. outputdir .. "/NovelGame/"),
+            ("{COPYFILE} %{cfg.buildtarget.abspath} %{wks.location}bin/" .. outputdir .. "/NovelGame/%{cfg.buildtarget.name}")
+        }
+
     filter "configurations:Debug"
         defines "REMA_DEBUG"
         symbols "On"
@@ -91,7 +97,7 @@ project "NovelGame"
         
         postbuildcommands
         {
-           ("{COPYFILE} ../bin/" .. outputdir .. "/RemaEngine/RemaEngine.dll ../bin/" .. outputdir .. "/%{prj.name}/")
+           --("{COPYFILE} ../bin/" .. outputdir .. "/RemaEngine/RemaEngine.dll ../bin/" .. outputdir .. "/%{prj.name}/")
         }
 
     filter "configurations:Debug"
