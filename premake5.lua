@@ -19,6 +19,9 @@ project "RemaEngine"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "remapch.h"
+    pchsource "RemaEngine/sources/remapch.cpp"
+
     files
     {
         "%{prj.name}/sources/**.h",
@@ -27,7 +30,8 @@ project "RemaEngine"
 
     includedirs
     {
-        "%{prj.name}/thirdparty/spdlog/include"
+        "%{prj.name}/thirdparty/spdlog/include",
+        "%{prj.name}/sources"
     }
 
     filter "system:windows"

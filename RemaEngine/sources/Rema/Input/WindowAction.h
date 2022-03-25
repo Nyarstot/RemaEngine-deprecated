@@ -3,8 +3,6 @@
 
 #include "Action.h"
 
-#include <sstream>
-
 namespace remaEngine
 {
 	class REMA_API WindowResizeAction : public Action

@@ -76,10 +76,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>remapch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>REMA_PLATFORM_WINDOWS;REMA_BUILD_DLL;REMA_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>thirdparty\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>thirdparty\spdlog\include;sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -90,13 +91,18 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>..\bin\Debug-windows-x86_64\RemaEngine\RemaEngine.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST $(SolutionDir)bin\Debug-windows-x86_64\NovelGame (mkdir $(SolutionDir)bin\Debug-windows-x86_64\NovelGame)
+copy /B /Y ..\bin\Debug-windows-x86_64\RemaEngine\RemaEngine.dll $(SolutionDir)bin\Debug-windows-x86_64\NovelGame\$(TargetFileName)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>remapch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>REMA_PLATFORM_WINDOWS;REMA_BUILD_DLL;REMA_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>thirdparty\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>thirdparty\spdlog\include;sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -111,13 +117,18 @@
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\bin\Release-windows-x86_64\RemaEngine\RemaEngine.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST $(SolutionDir)bin\Release-windows-x86_64\NovelGame (mkdir $(SolutionDir)bin\Release-windows-x86_64\NovelGame)
+copy /B /Y ..\bin\Release-windows-x86_64\RemaEngine\RemaEngine.dll $(SolutionDir)bin\Release-windows-x86_64\NovelGame\$(TargetFileName)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>remapch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>REMA_PLATFORM_WINDOWS;REMA_BUILD_DLL;REMA_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>thirdparty\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>thirdparty\spdlog\include;sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -132,6 +143,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\bin\Dist-windows-x86_64\RemaEngine\RemaEngine.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST $(SolutionDir)bin\Dist-windows-x86_64\NovelGame (mkdir $(SolutionDir)bin\Dist-windows-x86_64\NovelGame)
+copy /B /Y ..\bin\Dist-windows-x86_64\RemaEngine\RemaEngine.dll $(SolutionDir)bin\Dist-windows-x86_64\NovelGame\$(TargetFileName)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="sources\Rema.h" />
@@ -143,10 +158,14 @@
     <ClInclude Include="sources\Rema\Input\KeyboardAction.h" />
     <ClInclude Include="sources\Rema\Input\MouseAction.h" />
     <ClInclude Include="sources\Rema\Input\WindowAction.h" />
+    <ClInclude Include="sources\remapch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Rema\Engine\Engine.cpp" />
     <ClCompile Include="sources\Rema\Engine\Log.cpp" />
+    <ClCompile Include="sources\remapch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

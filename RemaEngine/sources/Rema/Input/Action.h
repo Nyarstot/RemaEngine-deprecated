@@ -3,9 +3,6 @@
 
 #include "../Engine/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace remaEngine
 {
 	enum class ActionType

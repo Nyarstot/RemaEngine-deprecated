@@ -7,6 +7,9 @@
     <Filter Include="Rema\Engine">
       <UniqueIdentifier>{EFC91A24-5B7F-9319-E473-8DF050288A1D}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rema\Input">
+      <UniqueIdentifier>{294A0BAC-1502-4DF9-7E09-26556AE0E7E9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sources\Rema.h" />
@@ -22,10 +25,19 @@
     <ClInclude Include="sources\Rema\Engine\Log.h">
       <Filter>Rema\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="sources\Rema\Input\Action.h" />
-    <ClInclude Include="sources\Rema\Input\KeyboardAction.h" />
-    <ClInclude Include="sources\Rema\Input\MouseAction.h" />
-    <ClInclude Include="sources\Rema\Input\WindowAction.h" />
+    <ClInclude Include="sources\Rema\Input\Action.h">
+      <Filter>Rema\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Rema\Input\KeyboardAction.h">
+      <Filter>Rema\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Rema\Input\MouseAction.h">
+      <Filter>Rema\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Rema\Input\WindowAction.h">
+      <Filter>Rema\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\remapch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Rema\Engine\Engine.cpp">
@@ -34,5 +46,6 @@
     <ClCompile Include="sources\Rema\Engine\Log.cpp">
       <Filter>Rema\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="sources\remapch.cpp" />
   </ItemGroup>
 </Project>
