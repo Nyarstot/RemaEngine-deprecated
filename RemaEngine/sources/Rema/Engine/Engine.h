@@ -3,6 +3,8 @@
 
 #include "Core.h"
 
+#include "Rema/Engine/Window.h"
+
 namespace remaEngine
 {
 	class REMA_API Engine
@@ -12,10 +14,10 @@ namespace remaEngine
 		virtual ~Engine();
 
 		void Run();
-	protected:
 
 	private:
-
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 
 	// To be defined in client

@@ -7,8 +7,7 @@ extern remaEngine::Engine* remaEngine::CreateApplication();
 int main(int argc, char** argv)
 {
 	remaEngine::Log::Init();
-	REMA_CORE_WARNING("Engine has been started");
-	REMA_INFO("Application has been startred");
+	REMA_CORE_INFO("Engine has been started");
 
 	auto app = remaEngine::CreateApplication();
 	app->Run();

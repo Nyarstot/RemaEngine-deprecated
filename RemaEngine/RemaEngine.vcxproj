@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>remapch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>REMA_PLATFORM_WINDOWS;REMA_BUILD_DLL;REMA_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>thirdparty\spdlog\include;sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>sources;thirdparty\spdlog\include;thirdparty\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -89,6 +89,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\RemaEngine\RemaEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -102,7 +103,7 @@ copy /B /Y ..\bin\Debug-windows-x86_64\RemaEngine\RemaEngine.dll $(SolutionDir)b
       <PrecompiledHeaderFile>remapch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>REMA_PLATFORM_WINDOWS;REMA_BUILD_DLL;REMA_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>thirdparty\spdlog\include;sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>sources;thirdparty\spdlog\include;thirdparty\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -115,6 +116,7 @@ copy /B /Y ..\bin\Debug-windows-x86_64\RemaEngine\RemaEngine.dll $(SolutionDir)b
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release-windows-x86_64\RemaEngine\RemaEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -128,7 +130,7 @@ copy /B /Y ..\bin\Release-windows-x86_64\RemaEngine\RemaEngine.dll $(SolutionDir
       <PrecompiledHeaderFile>remapch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>REMA_PLATFORM_WINDOWS;REMA_BUILD_DLL;REMA_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>thirdparty\spdlog\include;sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>sources;thirdparty\spdlog\include;thirdparty\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -141,6 +143,7 @@ copy /B /Y ..\bin\Release-windows-x86_64\RemaEngine\RemaEngine.dll $(SolutionDir
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Dist-windows-x86_64\RemaEngine\RemaEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -154,18 +157,26 @@ copy /B /Y ..\bin\Dist-windows-x86_64\RemaEngine\RemaEngine.dll $(SolutionDir)bi
     <ClInclude Include="sources\Rema\Engine\Engine.h" />
     <ClInclude Include="sources\Rema\Engine\Launch.h" />
     <ClInclude Include="sources\Rema\Engine\Log.h" />
+    <ClInclude Include="sources\Rema\Engine\Window.h" />
     <ClInclude Include="sources\Rema\Input\Action.h" />
     <ClInclude Include="sources\Rema\Input\KeyboardAction.h" />
     <ClInclude Include="sources\Rema\Input\MouseAction.h" />
     <ClInclude Include="sources\Rema\Input\WindowAction.h" />
+    <ClInclude Include="sources\Rema\System\Win32Window.h" />
     <ClInclude Include="sources\remapch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Rema\Engine\Engine.cpp" />
     <ClCompile Include="sources\Rema\Engine\Log.cpp" />
+    <ClCompile Include="sources\Rema\System\Win32Window.cpp" />
     <ClCompile Include="sources\remapch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="thirdparty\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

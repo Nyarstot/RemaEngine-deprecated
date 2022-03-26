@@ -1,5 +1,5 @@
-#ifndef REMAPCH_H
-#define REMAPCH_H
+#ifndef REMA_REMAPCH_H
+#define REMA_REMAPCH_H
 
 #include <iostream>
 #include <memory>
@@ -13,9 +13,11 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Rema/Engine/Log.h"
+
 #ifdef REMA_PLATFORM_WINDOWS
     #include <Windows.h>
 #endif // REMA_PLATFORM_WINDOWS 
 
 
-#endif // !REMAPCH_H
+#endif // !REMA_REMAPCH_H

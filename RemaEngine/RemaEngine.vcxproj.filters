@@ -10,6 +10,9 @@
     <Filter Include="Rema\Input">
       <UniqueIdentifier>{294A0BAC-1502-4DF9-7E09-26556AE0E7E9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rema\System">
+      <UniqueIdentifier>{7ED29045-EA87-093B-737C-0312DF30003F}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sources\Rema.h" />
@@ -25,6 +28,9 @@
     <ClInclude Include="sources\Rema\Engine\Log.h">
       <Filter>Rema\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Rema\Engine\Window.h">
+      <Filter>Rema\Engine</Filter>
+    </ClInclude>
     <ClInclude Include="sources\Rema\Input\Action.h">
       <Filter>Rema\Input</Filter>
     </ClInclude>
@@ -37,6 +43,9 @@
     <ClInclude Include="sources\Rema\Input\WindowAction.h">
       <Filter>Rema\Input</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Rema\System\Win32Window.h">
+      <Filter>Rema\System</Filter>
+    </ClInclude>
     <ClInclude Include="sources\remapch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="sources\Rema\Engine\Log.cpp">
       <Filter>Rema\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Rema\System\Win32Window.cpp">
+      <Filter>Rema\System</Filter>
     </ClCompile>
     <ClCompile Include="sources\remapch.cpp" />
   </ItemGroup>
