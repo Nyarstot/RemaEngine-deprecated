@@ -27,7 +27,7 @@ namespace remaEngine
         m_WindowData.Width = props.Width;
         m_WindowData.Height = props.Height;
 
-        REMA_CORE_INFO("Creating window {0} ({1} x {2})", props.Title, props.Width, props.Height);
+        REMA_CORE_INFO("Creating window \"{0}\" ({1} x {2})", props.Title, props.Width, props.Height);
 
         if (!s_GLFWInitialized) {
             int succes = glfwInit();
